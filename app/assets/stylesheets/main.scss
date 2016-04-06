@@ -10,6 +10,8 @@ $primary-pink:              #E961AB;
 $primary-blue:              #2CAED6;
 $primary-red:               #F55739;
 $primary-text:              #454552;
+$full-star:                 #D7C009;
+$no-star:                   #FFFFFF;
 $secondary-text:            #FFFFFF;
 $background-grey:           #F3F0F0;
 
@@ -21,6 +23,21 @@ body {
   margin: 0;
 }
 
+// Clearfix
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
 
 // Main Navigation
 
@@ -129,6 +146,55 @@ body {
       border-radius: 20px;
       background: $background-grey;
       border: 1px $background-grey solid;
+    }
+  }
+}
+
+// Information Section
+
+#information-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 20px;
+  background: $background-grey;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    img {
+      height: 120px;
+      width: 120px;
+      border-radius: 20px;
+    }
+  }
+  .information {
+    max-width: 640px;
+    .title-container {
+      float: left;
+      h2 {
+        margin: 0;
+        font-size: 26px;
+      }
+    }
+    .review-container {
+      float: right;
+      .stars {
+        font-size: 26px;
+        .full-star {
+          color: $full-star;
+        }
+        .no-star {
+          color: $no-star;
+        }
+      }
+    }
+  }
+  .filter-list {
+    font-weight: 700;
+    .online-bootcamp {
+      color: $primary-green;
     }
   }
 }

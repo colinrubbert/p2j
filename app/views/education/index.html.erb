@@ -1,39 +1,36 @@
-<div id="filter-wrapper">
-  <div class="filter-dropdown"><span>Type:</span>
-    <select id="filter-select">
-      <option value=""></option>
-      <option value="self-paced">Online Self Paced</option>
-      <option value="online-bootcamp">Online Bootcamp</option>
-      <option value="campus-bootcamp">Campus Bootcamp</option>
-    </select>
+<%= render 'education/filters' %>
+
+<div id="information-container">
+  <div class="logo">
+    <img src="assets/education_logo/thefirehoseproject_logo.png" alt="Logo for The Firehose Project">
   </div>
-  <div class="filter-dropdown"><span>Category:</span>
-    <select id="filter-select">
-      <option value=""></option>
-      <option value="full-stack-developer">Full Stack Developer</option>
-      <option value="front-end-developer">Front End Developer</option>
-      <option value="back-end-developer">Backend Developer</option>
-      <option value="ui-ux-designer">UI/UX Designer</option>
-    </select>
+  <div class="information">
+    <div class="header-container clearfix">
+      <div class="title-container">
+        <h2>The Firehose Project</h2>
+        <a href="http://www.thefirehoseproject.com/">http://www.thefirehoseproject.com/</a>
+      </div>
+      <div class="review-container">
+        <div class="stars">
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+        </div>
+        <a href="#" class="reviews">56 Reviews</a>
+      </div>
+    </div>
+    <p class="description">
+      The Firehose Project is an immersive online apprenticeship that aims to help you launch your idea into a real web application. Students will start coding on day one, and will work 1-on-1 with an experienced mentor to build their coding skills. Students have access to a Q&amp;A forum, and technical office hours with real web developers. Graduates will build advanced features and work with APIs, user authentication, payment processing, automated notification emails, video streaming, image uploading, geolocation, and user dashboards. Classes start each Monday and the Firehose Project will also help convince your employer to sponsor the apprenticeship.
+    </p>
   </div>
-  <div class="filter-dropdown"><span>Language:</span>
-    <select id="filter-select">
-      <option value=""></option>
-      <option value="ruby">Ruby on Rails</option>
-      <option value="javascript">Javascript</option>
-      <option value="nodejs">NodeJS</option>
-      <option value="reactjs">ReactJS</option>
-      <option value="python">Python</option>
-      <option value="angular">Angular</option>
-    </select>
-  </div>
-  <div class="filter-dropdown"><span>Location:</span>
-    <select id="filter-select">
-      <option value=""></option>
-      <option value="chicago">Chicago</option>
-      <option value="new-york">New York</option>
-      <option value="san-francisco">San Francisco</option>
-      <option value="online">Online</option>
-    </select>
+  <div class="filter-list">
+    <ul class="online-bootcamp">
+      <li>Online Bootcamp</li>
+      <li>Full-Stack Development</li>
+      <li>Ruby on Rails</li>
+      <li>Online</li>
+    </ul>
   </div>
 </div>
