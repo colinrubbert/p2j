@@ -109,8 +109,6 @@ body {
   }
 }
 
-
-
 // Filter Section
 
 #filter-wrapper {
@@ -119,12 +117,18 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
   .filter-dropdown {
     span {
       padding-right: 10px;
     }
-    button {
-
+    #filter-select {
+      height: 20px;
+      width: 80px;
+      border-radius: 20px;
+      background: $background-grey;
+      border: 1px $background-grey solid;
     }
   }
 }
