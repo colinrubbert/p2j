@@ -11,7 +11,7 @@ $primary-blue:              #2CAED6;
 $primary-red:               #F55739;
 $primary-text:              #454552;
 $full-star:                 #D7C009;
-$no-star:                   #FFFFFF;
+$no-star:                   #A7A7A7;
 $secondary-text:            #FFFFFF;
 $background-grey:           #F3F0F0;
 
@@ -142,7 +142,7 @@ body {
     }
     #filter-select {
       height: 20px;
-      width: 80px;
+      width: 180px;
       border-radius: 20px;
       background: $background-grey;
       border: 1px $background-grey solid;
@@ -163,14 +163,18 @@ body {
   display: flex;
   justify-content: space-between;
   .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     img {
-      height: 120px;
-      width: 120px;
+      height: 160px;
+      width: 160px;
       border-radius: 20px;
     }
   }
   .information {
-    max-width: 640px;
+    margin: 0 20px 0 20px;
+    max-width: 960px;
     .title-container {
       float: left;
       h2 {
@@ -195,6 +199,68 @@ body {
     font-weight: 700;
     .online-bootcamp {
       color: $primary-green;
+    }
+    .campus-bootcamp {
+      color: $primary-pink;
+    }
+    .online-course {
+      color: $primary-blue;
+    }
+  }
+}
+
+// Footer
+#copyright-social-container {
+  width: 80%;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .copyright {
+    padding: 20px;
+    font-weight: 300;
+    font-style: italic;
+    span {
+      font-style: normal;
+    }
+  }
+  .social-links {
+    padding: 20px;
+    a {
+      padding-right: 5px;
+      a:nth-child(4) {
+        padding-right: 0;
+      }
+      img {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
+
+#sub-footer {
+  height: 20px;
+  width: 100%;
+  .category-links {
+    width: 100%;
+    display: flex;
+    div {
+      width: 25%;
+      height: 20px;
+      display: flex;
+    }
+    .education-link {
+      background: $primary-green;
+    }
+    .apprentice-link {
+      background-color: $primary-pink;
+    }
+    .resource-link {
+      background-color: $primary-blue;
+    }
+    .job-link {
+      background-color: $primary-red;
     }
   }
 }
