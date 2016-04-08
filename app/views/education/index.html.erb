@@ -3,7 +3,7 @@
 <% @educations.each do |education| %>
 <div id="information-container">
   <div class="logo">
-    <img src="assets/education_logo/thefirehoseproject_logo.png" alt="Logo for The Firehose Project">
+    <img src="assets/education_logo/<%= education.logo_location %>" alt="Logo for <%= education.name %>">
   </div>
   <div class="information">
     <div class="header-container clearfix">
