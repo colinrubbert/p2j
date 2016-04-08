@@ -23,7 +23,11 @@
       </div>
     </div>
     <p class="description">
-      <%= education.description %>
+      <%= truncate education.description, length: 700 %>
+      <br />
+      <% if education.description.length > 700 %>
+        <%= link_to "Read More...", "#" %>
+      <% end %>
     </p>
   </div>
   <div class="filter-list">
