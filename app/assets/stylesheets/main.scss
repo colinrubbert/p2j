@@ -129,7 +129,7 @@ body {
 // Filter Section
 
 #filter-wrapper {
-  width: 60%;
+  width: 80%;
   margin: 0;
   margin-left: auto;
   margin-right: auto;
@@ -262,6 +262,34 @@ body {
     }
     .job-link {
       background-color: $primary-red;
+    }
+  }
+}
+
+// Media Queries
+
+@media screen and (max-width: 860px) {
+  #information-container {
+    display: block;
+    .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .information {
+      display: block;
+      text-align: center;
+      padding-top: 10px;
+      .title-container {
+        float: none;
+      }
+      .review-container {
+        float: none;
+      }
+    }
+    .filter-list {
+      display: inline-block;
+      max-width: 100%;
     }
   }
 }
