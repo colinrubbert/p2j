@@ -1,0 +1,9 @@
+<%= render 'education/filters' %>
+
+<div id="container" class="text-center">
+  <h1>New education resource</h1>
+  <%= simple_form_for @education do |f| %>
+    <%= f.input :name %>
+  <% end %>
+
+</div>

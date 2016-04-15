@@ -150,9 +150,9 @@ body {
   }
 }
 
-// Information Section
+// Global layouts
 
-#information-container {
+#container {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -160,6 +160,15 @@ body {
   padding: 20px;
   background: $background-grey;
   border-radius: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Information Section
+
+.information-container {
   display: flex;
   justify-content: space-between;
   .logo {
@@ -228,6 +237,7 @@ body {
   .social-links {
     padding: 20px;
     a {
+      text-decoration: none;
       padding-right: 5px;
       a:nth-child(4) {
         padding-right: 0;
