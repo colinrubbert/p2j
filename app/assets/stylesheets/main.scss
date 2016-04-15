@@ -166,6 +166,21 @@ body {
   text-align: center;
 }
 
+.form-container {
+  text-align: center;
+  input,
+  textarea,
+  select {
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 5px auto;
+  }
+}
+
 // Information Section
 
 .information-container {

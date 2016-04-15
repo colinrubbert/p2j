@@ -1,9 +1,17 @@
 <%= render 'education/filters' %>
 
-<div id="container" class="text-center">
-  <h1>New education resource</h1>
-  <%= simple_form_for @education do |f| %>
-    <%= f.input :name %>
-  <% end %>
+<div id="container">
+  <div class="form-container">
+    <h1>New education resource</h1>
+    <%= simple_form_for @education, url: new_education_path do |f| %>
+      <%= f.input :name, placeholder: 'The Firehose Project', wrapper_html: {class: 'form-control'} %>
+      <%= f.input :description, placeholder: 'Summary of education resource' %>
+      <%= f.input :course_type, collection: ['Online Self Paced', 'Online Bootcamp', 'Campus Bootcamp'], placeholder: 'Course Type' %>
+      <%= f.input :category, collection: ['Full-Stack Developer', 'Front-End Developer', 'UI/UX Developer', 'Backend Developer'], placeholder: 'Course Category' %>
+      <%= f.input :language, collection: ['Ruby on Rails', 'JavaScript', 'ReactJS', 'Swift', 'AngularJS', 'MeteorJS', 'C#', 'Python'], placeholder: 'Primary Language' %>
+      <%= f.input :location, collection: ['Online', 'Miami', 'Atlanta', 'Ft. Lauderdale', 'London'], placeholder: 'Location' %>
+      <%= f.input :logo_location, placeholder: 'firehose_logo.png' %>
+    <% end %>
+  </div>
 
 </div>
