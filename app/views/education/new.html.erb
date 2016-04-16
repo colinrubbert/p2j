@@ -6,10 +6,10 @@
     <%= simple_form_for @education, url: new_education_path do |f| %>
       <%= f.input :name, placeholder: 'The Firehose Project', wrapper_html: {class: 'form-control'} %>
       <%= f.input :description, placeholder: 'Summary of education resource' %>
-      <%= f.input :course_type, collection: ['Online Self Paced', 'Online Bootcamp', 'Campus Bootcamp'], placeholder: 'Course Type' %>
-      <%= f.input :category, collection: ['Full-Stack Developer', 'Front-End Developer', 'UI/UX Developer', 'Backend Developer'], placeholder: 'Course Category' %>
-      <%= f.input :language, collection: ['Ruby on Rails', 'JavaScript', 'ReactJS', 'Swift', 'AngularJS', 'MeteorJS', 'C#', 'Python'], placeholder: 'Primary Language' %>
-      <%= f.input :location, collection: ['Online', 'Miami', 'Atlanta', 'Ft. Lauderdale', 'London'], placeholder: 'Location' %>
+      <%= f.input :course_type, collection: Education::COURSE_TYPES.sort %>
+      <%= f.input :category, collection: Education::COURSE_CATEGORY.sort %>
+      <%= f.input :language, collection: Education::COURSE_LANGUAGE.sort %>
+      <%= f.input :location, collection: Education::COURSE_LOCATION.sort %>
       <%= f.input :logo_location, placeholder: 'firehose_logo.png' %>
     <% end %>
   </div>
