@@ -13,6 +13,20 @@ class EducationsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @education = Education.find(params[:id])
+  end
+
+  def edit
+    @education = Education.find(params[:id])
+  end
+
+  def update
+    @education = Education.find(params[:id])
+    @education.update_attributes(education_params)
+    redirect_to root_path
+  end
+
   private
 
   def education_params

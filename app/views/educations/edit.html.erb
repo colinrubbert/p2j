@@ -1,0 +1,22 @@
+<%= render 'educations/filters' %>
+
+<div id="container-alt">
+  <div class="form-container">
+    <h1 class="text-center">Edit education resource</h1>
+    <div class="form-input">
+      <%= simple_form_for @education do |f| %>
+        <%= f.input :name, placeholder: 'The Firehose Project'%>
+        <%= f.input :web_url, placeholder: 'https://thefirehoseproject.com', label: "Web Address" %>
+        <%= f.input :description, label: 'Summary of education resource', placeholder: 'This particular bootcamp has some wonderful features that are designed to give students the best chance at becoming a Junior Developer' %>
+        <%= f.input :course_type, collection: Education::COURSE_TYPES.sort, label: "Course Type" %>
+        <%= f.input :category, collection: Education::COURSE_CATEGORY.sort, label: "Course Category" %>
+        <%= f.input :language, collection: Education::COURSE_LANGUAGE.sort, label: "Course Language" %>
+        <%= f.input :location, collection: Education::COURSE_LOCATION.sort, label: "Course Location" %>
+        <%= f.input :logo_location, placeholder: 'firehose_logo.png', label: "Logo File Location" %>
+        <br/>
+        <%= f.button :submit, 'Update', class: 'btn btn-green pull-right' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
