@@ -1,16 +1,17 @@
 <%= render 'education/filters' %>
 
-<div id="container">
+<div id="container-alt">
   <div class="form-container">
     <h1>New education resource</h1>
     <%= simple_form_for @education, url: new_education_path do |f| %>
-      <%= f.input :name, placeholder: 'The Firehose Project', wrapper_html: {class: 'form-control'} %>
-      <%= f.input :description, placeholder: 'Summary of education resource' %>
-      <%= f.input :course_type, collection: Education::COURSE_TYPES.sort %>
-      <%= f.input :category, collection: Education::COURSE_CATEGORY.sort %>
-      <%= f.input :language, collection: Education::COURSE_LANGUAGE.sort %>
-      <%= f.input :location, collection: Education::COURSE_LOCATION.sort %>
-      <%= f.input :logo_location, placeholder: 'firehose_logo.png' %>
+      <%= f.input :name, placeholder: 'The Firehose Project', label: false %>
+      <%= f.input :description, placeholder: 'Summary of education resource', label: false %>
+      <%= f.input :course_type, collection: Education::COURSE_TYPES.sort, prompt: "Course Type", label: false %>
+      <%= f.input :category, collection: Education::COURSE_CATEGORY.sort, prompt: "Course Category", label: false %>
+      <%= f.input :language, collection: Education::COURSE_LANGUAGE.sort, prompt: "Course Language", label: false %>
+      <%= f.input :location, collection: Education::COURSE_LOCATION.sort, prompt: "Course Location", label: false %>
+      <%= f.input :logo_location, placeholder: 'Location of Logo', label: false %>
+      <%= f.submit 'Create' %>
     <% end %>
   </div>
 
