@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'education#index'
+  root 'educations#index'
 
-  resources :education
+  resources :educations
 
 end
