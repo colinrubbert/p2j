@@ -31,6 +31,12 @@ h1 {
   font-weight: 300;
 }
 
+a:link,
+a:visited,
+a:active {
+  color: $primary-text;
+}
+
 // Clearfix
 
 .clearfix:before,
@@ -263,11 +269,15 @@ input.btn {
   .information {
     margin: 0 20px 0 20px;
     max-width: 960px;
+    min-width: 500px;
     .title-container {
       float: left;
       h2 {
         margin: 0;
         font-size: 26px;
+        a {
+          text-decoration: none;
+        }
       }
     }
     .review-container {

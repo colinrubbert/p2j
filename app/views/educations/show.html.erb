@@ -1,15 +1,14 @@
-<%= render 'educations/filters' %>
+<%= render "educations/filters" %>
 
-<% @educations.each do |education| %>
 <div id="container" class="information-container">
   <div class="logo">
-    <img src="assets/education_logo/<%= education.logo_location %>" alt="Logo for <%= education.name %>">
+    <img src="../assets/education_logo/<%= @education.logo_location %>" alt="Logo for <%= @education.name %>">
   </div>
   <div class="information">
     <div class="header-container clearfix">
       <div class="title-container">
-        <h2><%= link_to education.name, education_path(education) %></h2>
-        <a href="<%= education.web_url %>" target="_blank"><%= education.web_url %></a>
+        <h2><%= @education.name %></h2>
+        <a href="<%= @education.web_url %>" target="_blank"><%= @education.web_url %></a>
       </div>
       <div class="review-container">
         <div class="stars">
@@ -23,21 +22,15 @@
       </div>
     </div>
     <p class="description">
-      <%= truncate education.description, length: 700 %>
-      <br />
-      <% if education.description.length > 700 %>
-        <%= link_to "Read More...", education_path(education) %>
-      <% end %>
+      <%= @education.description %>
     </p>
   </div>
   <div class="filter-list">
     <ul class="online-bootcamp">
-      <li><%= education.course_type %></li>
-      <li><%= education.category %></li>
-      <li><%= education.language %></li>
-      <li><%= education.location %></li>
+      <li><%= @education.course_type %></li>
+      <li><%= @education.category %></li>
+      <li><%= @education.language %></li>
+      <li><%= @education.location %></li>
     </ul>
   </div>
 </div>
-
-<% end %>
