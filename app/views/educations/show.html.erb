@@ -34,3 +34,10 @@
     </ul>
   </div>
 </div>
+
+<div id="container-alt">
+  <div class="admin_buttons pull-right">
+    <%= link_to 'Edit', edit_education_path(@education), class: 'btn btn-edit' %>
+    <%= link_to 'Delete', education_path(@education), method: :delete, data: {confirm: "Are you sure you want to delete this entry?"}, class: 'btn btn-danger' %>
+  </div>
+</div>

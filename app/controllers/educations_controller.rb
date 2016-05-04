@@ -27,6 +27,13 @@ class EducationsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @education = Education.find(params[:id])
+    @education.destroy
+    redirect_to root_path
+  end
+
+
   private
 
   def education_params

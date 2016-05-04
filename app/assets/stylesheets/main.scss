@@ -18,6 +18,10 @@ $background-grey:           #F3F0F0;
 $background-grey-alt:       #BFBFB4;
 $white:                     #FFFFFF;
 
+// Standard Button Colors
+$edit:                      #7200DA;
+$danger:                    #F9320C;
+
 // Global Settings
 
 body {
@@ -231,13 +235,22 @@ a:active {
 }
 
 .btn {
+  color: $white;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
   width: 100px;
   line-height: 18px;
   font-size: 18px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
 input.btn {
+  color: $white;
+  border-radius: 20px;
+  border: none;
   width: 100px;
   line-height: 18px;
   font-size: 18px;
@@ -246,9 +259,14 @@ input.btn {
 
 .btn-green {
   background-color: $primary-green;
-  color: $white;
-  border-radius: 20px;
-  border: none;
+}
+
+.btn-danger {
+  background-color: $danger;
+}
+
+.btn-edit {
+  background-color: $edit;
 }
 
 // Information Section
@@ -308,19 +326,23 @@ input.btn {
   }
 }
 
+.admin_buttons {
+  margin-top: -50px;
+  display: flex;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+  .btn {
+    margin: auto 10px;
+  }
+}
 
 
 // Eduation Section
 
 
 // Footer
-
-// footer {
-//   position: fixed;
-//   left: 0px;
-//   bottom: 0px;
-//   width: 100%;
-// }
 
 #copyright-social-container {
   width: 80%;
