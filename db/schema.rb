@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504211852) do
+ActiveRecord::Schema.define(version: 20160505204952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20160504211852) do
     t.string   "course_type"
     t.string   "web_url"
     t.string   "logo_location"
+    t.integer  "user_id"
   end
+
+  add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

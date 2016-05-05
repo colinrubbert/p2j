@@ -1,4 +1,5 @@
 class EducationsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @educations = Education.all
@@ -9,7 +10,7 @@ class EducationsController < ApplicationController
   end
 
   def create
-    Education.create(education_params)
+    current_user.educations.create(education_params)
     redirect_to root_path
   end
 

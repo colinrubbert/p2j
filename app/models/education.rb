@@ -1,4 +1,5 @@
 class Education < ActiveRecord::Base
+  belongs_to :user
 
   COURSE_TYPES = {
     'Online Self Paced' => 'Online Self Paced',
