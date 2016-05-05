@@ -2,7 +2,11 @@
   <div class="navigation-container">
     <div class="brand">
       <div class="brand-logo"><img src="/assets/p2j_logo.svg" alt="Path to Junior Logo"></div>
-      <div class="brand-title">Path<span>To</span>Junior</div>
+      <div class="brand-title">
+        <%= link_to(root_path) do %>
+          Path<span>To</span>Junior
+        <% end %>
+      </div>
     </div>
 
     <div class="main-links">
