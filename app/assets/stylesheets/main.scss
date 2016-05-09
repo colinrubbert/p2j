@@ -107,6 +107,12 @@ a:active {
         margin: 0;
         padding-left: 10px;
       }
+      .sub-menu {
+        padding-left: 10px;
+        li {
+          list-style: none;
+        }
+      }
     }
   }
 }
