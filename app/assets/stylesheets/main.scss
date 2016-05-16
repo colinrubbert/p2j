@@ -297,8 +297,6 @@ input.btn {
   justify-content: space-between;
   .logo {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     img {
       height: 160px;
       width: 160px;
@@ -307,8 +305,6 @@ input.btn {
   }
   .information {
     margin: 0 20px 0 20px;
-    max-width: 960px;
-    min-width: 500px;
     .title-container {
       float: left;
       h2 {
@@ -334,7 +330,6 @@ input.btn {
   }
   .filter-list {
     font-weight: 700;
-    max-width: 220px;
     .online-bootcamp {
       color: $primary-green;
     }
@@ -463,5 +458,15 @@ input.btn {
       padding-bottom: 10px;
     }
   }
+
+  // Information Section
+
+  .information-container {
+    flex-wrap: wrap;
+    .logo {
+      margin: 0 auto 10px auto;
+    }
+  }
+
 
 }
