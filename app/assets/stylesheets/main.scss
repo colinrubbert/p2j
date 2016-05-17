@@ -305,25 +305,30 @@ input.btn {
   }
   .information {
     margin: 0 20px 0 20px;
-    .title-container {
-      float: left;
-      h2 {
-        margin: 0;
-        font-size: 26px;
-        a {
-          text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .title-container {
+        h2 {
+          margin: 0;
+          font-size: 26px;
+          a {
+            text-decoration: none;
+          }
         }
       }
-    }
-    .review-container {
-      float: right;
-      .stars {
-        font-size: 26px;
-        .full-star {
-          color: $full-star;
-        }
-        .no-star {
-          color: $no-star;
+      .review-container {
+        .stars {
+          font-size: 26px;
+          .full-star {
+            color: $full-star;
+          }
+          .no-star {
+            color: $no-star;
+          }
         }
       }
     }
@@ -421,7 +426,18 @@ input.btn {
 
 // Media Queries
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 900px) {
+
+  .information-container {
+    .information {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+
+
 
 }
 
@@ -430,7 +446,6 @@ input.btn {
   // Main Navigation
 
   #main-navigation {
-
     .main-links {
       display: none;  // Temporary this will need to be removed
     }
