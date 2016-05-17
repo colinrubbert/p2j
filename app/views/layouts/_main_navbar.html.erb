@@ -1,3 +1,32 @@
+<div class="mobile-nav">
+  <% if current_user && current_user.admin? %>
+    <%= link_to do %>
+      New <span>&#9660;</span>
+    <% end %>
+    <!-- <ul class="sub-menu">
+      <li>
+        <%= link_to 'Education', '#' %>
+      </li>
+      <li>
+        <%= link_to 'Apprenticeship', '#' %>
+      </li>
+      <li>
+        <%= link_to 'Resource', '#' %>
+      </li>
+      <li>
+        <%= link_to 'Job Posting', '#' %>
+      </li>
+    </ul> -->
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+  <% end %>
+  <%= link_to 'Sign Up', new_user_registration_path %>
+  <a href="#">Submit a Suggestion</a>
+</div>
+
 <nav id="main-navigation">
   <div class="navigation-container">
     <div class="brand">
@@ -36,6 +65,10 @@
       <% end %>
       <%= link_to 'Sign Up', new_user_registration_path %>
       <a href="#">Submit a Suggestion</a>
+    </div>
+
+    <div class="mobile-nav-toggle">
+      <span></span>
     </div>
   </div>
 </nav>

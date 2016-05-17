@@ -114,6 +114,71 @@ a:active {
         }
       }
     }
+
+    .mobile-nav-toggle {
+      display: none;
+      width: 50px;
+      height: 25px;
+      float: right;
+      margin: 25px 0 0 0;
+      align-items: center;
+      cursor:pointer;
+      &:selection {
+        background: transparent;
+      }
+      &:-moz-selection {
+        background: transparent;
+      }
+      span,
+      span:before,
+      span:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: $primary-green;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+      span:before {
+        top: 15px;
+      }
+      span:after {
+        top: -17px;
+      }
+      &.is-open span {
+        background: transparent;
+      }
+      &.is-open span:before,
+      &.is-open span:after {
+        transform-origin: center;
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &.is-open span:before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  width: 100%;
+  background: $background-grey;
+  padding: 60px 0 20px;
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+
+  a {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  a:hover {
+    color: $primary-blue;
   }
 }
 
@@ -446,9 +511,19 @@ input.btn {
   // Main Navigation
 
   #main-navigation {
-    .main-links {
-      display: none;  // Temporary this will need to be removed
+    .navigation-container{
+      .main-links {
+        display: none;  // Temporary this will need to be removed
+      }
+      .mobile-nav-toggle {
+        display: flex;
+      }
     }
+  }
+
+  .mobile-nav.is-open {
+    display: block;
+    transform: translateY(0%);
   }
 
   // Sub Navigation
@@ -482,6 +557,20 @@ input.btn {
       margin: 0 auto 10px auto;
     }
   }
+}
 
-
+@media screen and (max-width: 640px) {
+  #main-navigation {
+    .navigation-container {
+      width: 90%;
+      .brand {
+        .brand-logo {
+          display: none;
+        }
+        .brand-title {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
