@@ -57,6 +57,12 @@ a:active {
   zoom: 1; /* ie 6/7 */
 }
 
+// Helpers
+
+.text-center {
+  text-align: center;
+}
+
 // Main Navigation
 
 #main-navigation {
@@ -385,17 +391,6 @@ input.btn {
           }
         }
       }
-      .review-container {
-        .stars {
-          font-size: 26px;
-          .full-star {
-            color: $full-star;
-          }
-          .no-star {
-            color: $no-star;
-          }
-        }
-      }
     }
   }
   .filter-list {
@@ -488,6 +483,61 @@ input.btn {
     }
   }
 }
+
+// Reviews Section
+
+.review-rating-container {
+  .stars {
+    font-size: 26px;
+    line-height: 26px;
+    .full-star {
+      color: $full-star;
+    }
+    .no-star {
+      color: $no-star;
+    }
+  }
+}
+
+#education-reviews {
+  h1 {
+    font-size: 42px;
+    line-height: 42px;
+    margin: 20px auto;
+  }
+  .reviews-wrapper {
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.10);
+    border-radius: 10px;
+    .reviews-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      .review-title {
+        font-size: 26px;
+        line-height: 26px;
+        margin: 0 auto;
+      }
+    }
+    .reviewer-container {
+      .reviewer-name {
+        font-style: italic;
+        font-weight: 300;
+      }
+      .reviewer-links {
+        font-size: 24px;
+        line-height: 24px;
+        i {
+          padding-right: 10px;
+        }
+      }
+    }
+
+  }
+
+}
+
 
 // Media Queries
 
