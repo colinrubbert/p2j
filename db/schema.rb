@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505204952) do
+ActiveRecord::Schema.define(version: 20160523215726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "education_reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "rating"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "education_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "education_reviews", ["education_id"], name: "index_education_reviews_on_education_id", using: :btree
+  add_index "education_reviews", ["user_id", "education_id"], name: "index_education_reviews_on_user_id_and_education_id", using: :btree
 
   create_table "educations", force: :cascade do |t|
     t.string   "name"

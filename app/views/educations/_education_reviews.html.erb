@@ -1,4 +1,19 @@
 <section id="education-reviews">
+
+  <div id="container-alt">
+    <div class="form-container">
+      <h1 class="text-center">Write a Review</h1>
+      <div class="form-input">
+        <%= simple_form_for @education_review, url: '#' do |f| %>
+          <%= f.input :title %>
+          <%= f.input :rating %>
+          <%= f.input :description %>
+          <%= f.button :submit, 'Create', class: 'btn btn-green pull-right' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div id="container-alt">
     <h1 class="text-center">Reviews</h1>
     <div class="reviews-wrapper">

@@ -16,6 +16,7 @@ class EducationsController < ApplicationController
 
   def show
     @education = Education.find(params[:id])
+    @education_review = EducationReview.new
   end
 
   def edit
