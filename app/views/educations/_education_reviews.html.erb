@@ -4,9 +4,9 @@
     <div class="form-container">
       <h1 class="text-center">Write a Review</h1>
       <div class="form-input">
-        <%= simple_form_for @education_review, url: '#' do |f| %>
+        <%= simple_form_for @education_review, url: education_education_reviews_path(@education) do |f| %>
           <%= f.input :title %>
-          <%= f.input :rating %>
+          <%= f.input :rating, as: :select, collection: EducationReview::RATINGS %>
           <%= f.input :description %>
           <%= f.button :submit, 'Create', class: 'btn btn-green pull-right' %>
         <% end %>
@@ -16,64 +16,55 @@
 
   <div id="container-alt">
     <h1 class="text-center">Reviews</h1>
-    <div class="reviews-wrapper">
-      <div class="reviews-header">
-        <h3 class="review-title">Wow! What a course!</h3>
-        <div class="review-rating-container">
-          <div class="stars">
-            <span class="full-star">&#9733;</span>
-            <span class="full-star">&#9733;</span>
-            <span class="full-star">&#9733;</span>
-            <span class="full-star">&#9733;</span>
-            <span class="full-star">&#9733;</span>
-          </div>
-        </div>
-      </div>
-      <div class="review-body">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
-        </p>
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.
-        </p>
-      </div>
-      <div class="reviewer-container">
-        <h3 class="reviewer-name">
-          Colin Rubbert
-        </h3>
-        <div class="reviewer-links">
-          <a href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
 
+    <% @education.education_reviews.each do |review| %>
     <div class="reviews-wrapper">
       <div class="reviews-header">
-        <h3 class="review-title">Meh!</h3>
+        <h3 class="review-title"><%= review.title %></h3>
         <div class="review-rating-container">
           <div class="stars">
-            <span class="full-star">&#9733;</span>
-            <span class="full-star">&#9733;</span>
-            <span class="no-star">&#9733;</span>
-            <span class="no-star">&#9733;</span>
-            <span class="no-star">&#9733;</span>
+            <% if review.rating = "1_star" %>
+              <span class="full-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+            <% elsif review.rating = "2_stars" %>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+            <% elsif review.rating = "3_stars" %>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+            <% elsif review.rating = "4_stars" %>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="no-star">&#9733;</span>
+            <% else review.rating = "5_stars" %>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+              <span class="full-star">&#9733;</span>
+            <% end %>
           </div>
         </div>
       </div>
       <div class="review-body">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
-        </p>
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.
+          <%= review.description %>
         </p>
       </div>
       <div class="reviewer-container">
         <h3 class="reviewer-name">
-          Colin Rubbert
+          <%= review.user.email %>
         </h3>
         <div class="reviewer-links">
           <a href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a>
@@ -83,5 +74,6 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </section>
