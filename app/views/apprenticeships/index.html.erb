@@ -1,0 +1,43 @@
+<%= render 'apprenticeships/filters' %>
+
+<% @apprentices.each do |apprentice| %>
+<div id="container" class="information-container">
+  <div class="logo">
+    <img src="assets/apprentice_logo/<%= apprentice.logo_location %>" alt="Logo for <%= apprentice.name %>">
+  </div>
+  <div class="information">
+    <div class="header-container clearfix">
+      <div class="title-container">
+        <h2><%= link_to apprentice.name, apprentice_path(apprentice) %></h2>
+        <a href="<%= apprentice.web_url %>" target="_blank"><%= apprentice.web_url %></a>
+      </div>
+      <div class="review-container">
+        <div class="stars">
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+        </div>
+        <a href="#" class="reviews">56 Reviews</a>
+      </div>
+    </div>
+    <p class="description">
+      <%= truncate apprentice.description, length: 700 %>
+      <br />
+      <% if apprentice.description.length > 700 %>
+        <%= link_to "Read More...", apprentice_path(apprentice) %>
+      <% end %>
+    </p>
+  </div>
+  <div class="filter-list">
+    <ul class="online-bootcamp">
+      <li><%= apprentice.course_type %></li>
+      <li><%= apprentice.category %></li>
+      <li><%= apprentice.language %></li>
+      <li><%= apprentice.location %></li>
+    </ul>
+  </div>
+</div>
+
+<% end %>

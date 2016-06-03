@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :education_reviews, only: :create
   end
 
+  resources :apprenticeships
+
 end

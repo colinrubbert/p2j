@@ -11,10 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528181734) do
+ActiveRecord::Schema.define(version: 20160603170001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apprentices", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "web_url"
+    t.string   "category"
+    t.string   "location"
+    t.string   "language"
+    t.string   "logo_location"
+    t.boolean  "paid",          default: false, null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "apprenticeships", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "web_url"
+    t.string   "category"
+    t.string   "location"
+    t.string   "language"
+    t.string   "logo_location"
+    t.boolean  "paid",          default: false, null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "course_categories", force: :cascade do |t|
+    t.string   "course_category"
+    t.integer  "education_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "education_reviews", force: :cascade do |t|
     t.string   "title"

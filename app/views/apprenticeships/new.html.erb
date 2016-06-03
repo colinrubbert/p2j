@@ -1,0 +1,22 @@
+<%= render 'apprenticeships/filters' %>
+
+<div id="container-alt">
+  <div class="form-container">
+    <h1 class="text-center">New apprenticeship resource</h1>
+    <div class="form-input">
+      <%= simple_form_for @apprenticeship do |f| %>
+        <%= f.input :name, placeholder: 'Clique Studios'%>
+        <%= f.input :web_url, placeholder: 'https://cliquestudios.com', label: "Web Address" %>
+        <%= f.input :description, label: 'Summary of apprenticeship resource', placeholder: 'This particular apprenticeship has some wonderful features that are designed to give students the best chance at becoming a Junior Developer' %>
+        <%= f.input :paid, label: "Is the apprenticeship paid?", as: :select, checked_value: true, unchecked_value: false, boolean_style: :inline %>
+        <%= f.input :category, collection: Apprenticeship::APPRENTICESHIP_CATEGORY.sort, label: "Apprenticeship Type" %>
+        <%= f.input :location, placeholder: "Chicago", label: "Apprenticeship Location" %>
+        <%= f.input :language, collection: Apprenticeship::APPRENTICESHIP_LANGUAGE.sort, label: "Apprenticeship Language" %>
+        <%= f.input :logo_location, placeholder: 'clique_logo.png', label: "Logo File Location" %>
+        <br/>
+        <%= f.button :submit, 'Create', class: 'btn btn-green pull-right' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

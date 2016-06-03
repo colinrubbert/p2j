@@ -11,7 +11,7 @@
         <%= f.input :course_type, collection: Education::COURSE_TYPES.sort, label: "Course Type" %>
         <%= f.input :category, collection: Education::COURSE_CATEGORY.sort, label: "Course Category" %>
         <%= f.input :language, collection: Education::COURSE_LANGUAGE.sort, label: "Course Language" %>
-        <%= f.input :location, collection: Education::COURSE_LOCATION.sort, label: "Course Location" %>
+        <%= f.input :location, placeholder: "Chicago", label: "Course Location" %>
         <%= f.input :logo_location, placeholder: 'firehose_logo.png', label: "Logo File Location" %>
         <br/>
         <%= f.button :submit, 'Create', class: 'btn btn-green pull-right' %>

@@ -1,0 +1,45 @@
+<%= render "apprenticehips/filters" %>
+
+<div id="container" class="information-container">
+  <div class="logo">
+    <img src="../assets/apprenticeship_logo/<%= @apprenticeship.logo_location %>" alt="Logo for <%= @apprenticeship.name %>">
+  </div>
+  <div class="information">
+    <div class="header-container clearfix">
+      <div class="title-container">
+        <h2><%= @apprenticeship.name %></h2>
+        <a href="<%= @apprenticeship.web_url %>" target="_blank"><%= @apprenticeship.web_url %></a>
+      </div>
+      <div class="review-container">
+        <div class="stars">
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+          <span class="full-star">&#9733;</span>
+        </div>
+        <a href="#" class="reviews">56 Reviews</a>
+      </div>
+    </div>
+    <p class="description">
+      <%= @apprenticeship.description %>
+    </p>
+  </div>
+  <div class="filter-list">
+    <ul class="online-bootcamp">
+      <li><%= @apprenticeship.paid %></li>
+      <li><%= @apprenticeship.category %></li>
+      <li><%= @apprenticeship.language %></li>
+      <li><%= @apprenticeship.location %></li>
+    </ul>
+  </div>
+</div>
+
+<div id="container-alt">
+  <div class="admin_buttons pull-right">
+    <%= link_to 'Edit', edit_apprenticeship_path(@apprenticeship), class: 'btn btn-edit' %>
+    <%= link_to 'Delete', apprenticeship_path(@apprenticeship), method: :delete, data: {confirm: "Are you sure you want to delete this entry?"}, class: 'btn btn-danger' %>
+  </div>
+</div>
+
+<%= render 'apprenticeship_reviews' %>

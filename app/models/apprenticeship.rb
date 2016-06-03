@@ -1,21 +1,20 @@
-class Education < ActiveRecord::Base
+class Apprenticeship < ActiveRecord::Base
   belongs_to :user
-  has_many :education_reviews
 
-  COURSE_TYPES = {
-    'Online Self Paced' => 'Online Self Paced',
-    'Online Bootcamp' => 'Online Bootcamp',
-    'Campus Bootcamp' => 'Campus Bootcamp'
+  APPRENTICE_TYPES = {
+    'Online Apprenticeship' => 'Online Apprenticeship',
+    'In Person Apprenticeship'=> 'In Person Apprenticeship'
   }
 
-  COURSE_CATEGORY = {
+  APPRENTICESHIP_CATEGORY = {
     'Full-Stack Developer' => 'Full-Stack Developer',
     'Front-End Developer' => 'Front-End Developer',
     'UI/UX Developer' => 'UI/UX Developer',
-    'Backend Developer' => 'Backend Developer'
+    'Backend Developer' => 'Backend Developer',
+    'Design' => 'Design'
   }
 
-  COURSE_LANGUAGE = {
+  APPRENTICESHIP_LANGUAGE = {
     'Ruby on Rails' => 'Ruby on Rails',
     'JavaScript' => 'JavaScript',
     'ReactJS' => 'ReactJS',
