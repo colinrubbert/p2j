@@ -1,0 +1,20 @@
+<%= render 'resources/filters' %>
+
+<div id="container-alt">
+  <div class="form-container">
+    <h1 class="text-center">Edit Resource</h1>
+    <div class="form-input">
+      <%= simple_form_for @resource do |f| %>
+        <%= f.input :category, collection: Resource::RESOURCE_CATEGORY.sort, label: "Resource Category" %>
+        <%= f.input :sub_category, collection: Resource::RESOURCE_SUB_CATEGORY.sort, label: "Resource Sub Category" %>
+        <%= f.input :title, label: 'Resource Name', placeholder: 'LOLColors' %>
+        <%= f.input :description, label: 'Resource Description', placeholder: 'Curated color palettes' %>
+        <%= f.input :web_url, label: 'Web URL', placeholder: 'http://www.lolcolors.com' %>
+        <%= f.input :is_affiliate, label: "Is this an affiliate link?", as: :select, checked_value: true, unchecked_value: false, boolean_style: :inline %>
+        <br/>
+        <%= f.button :submit, 'Update', class: 'btn btn-green pull-right' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

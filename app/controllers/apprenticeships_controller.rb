@@ -26,13 +26,13 @@ class ApprenticeshipsController < ApplicationController
   def update
     @apprenticeship = Apprenticeship.find(params[:id])
     @apprenticeship.update_attributes(apprenticeship_params)
-    redirect_to root_path
+    redirect_to apprenticeships_path
   end
 
   def destroy
     @apprenticeship = Apprenticeship.find(params[:id])
     @apprenticeship.destroy
-    redirect_to root_path
+    redirect_to apprenticeships_path
   end
 
 
