@@ -11,24 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603170001) do
+ActiveRecord::Schema.define(version: 20160705154651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "apprentices", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "web_url"
-    t.string   "category"
-    t.string   "location"
-    t.string   "language"
-    t.string   "logo_location"
-    t.boolean  "paid",          default: false, null: false
-    t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-  end
 
   create_table "apprenticeships", force: :cascade do |t|
     t.string   "name"
@@ -42,13 +28,6 @@ ActiveRecord::Schema.define(version: 20160603170001) do
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-  end
-
-  create_table "course_categories", force: :cascade do |t|
-    t.string   "course_category"
-    t.integer  "education_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "education_reviews", force: :cascade do |t|
@@ -79,6 +58,17 @@ ActiveRecord::Schema.define(version: 20160603170001) do
   end
 
   add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "web_url"
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "is_affiliate", default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

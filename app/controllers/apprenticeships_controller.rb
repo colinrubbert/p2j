@@ -11,7 +11,7 @@ class ApprenticeshipsController < ApplicationController
 
   def create
     current_user.apprenticeships.create(apprenticeship_params)
-    redirect_to root_path
+    redirect_to apprenticeships_path
   end
 
   def show

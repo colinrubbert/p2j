@@ -1,0 +1,12 @@
+<%= render 'resources/filters' %>
+
+<% @resources.each do |resource| %>
+  <div id="container-alt">
+    <div class="resource-category"><%= resource.category.upcase %> Resources</div>
+    <div class="resource-sub-category"><%= resource.sub_category.capitalize %></div>
+    <div class="resource-content-wrapper">
+      <%= link_to resource.title, resource.web_url, class: "resource-title", target: "_blank" %>
+      <p class="resource-description"><%= resource.description %></p>
+    </div>
+  </div>
+<% end %>
