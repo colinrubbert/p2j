@@ -1,12 +1,35 @@
 <%= render 'resources/filters' %>
 
-<% @resources.each do |resource| %>
-  <div id="container-alt">
-    <div class="resource-category"><%= resource.category.upcase %> Resources</div>
-    <div class="resource-sub-category"><%= resource.sub_category.capitalize %></div>
-    <div class="resource-content-wrapper">
-      <%= link_to resource.title, resource.web_url, class: "resource-title", target: "_blank" %>
-      <p class="resource-description"><%= resource.description %></p>
-    </div>
+<!-- Start Design Category -->
+<div id="container-alt">
+  <div class="resource-category">
+    Design Resources
   </div>
-<% end %>
+
+  <div class="resource-sub-category">
+    Color
+  </div>
+
+  <% @resources.each do |resource| %>
+    <% if resource.sub_category == "Color" %>
+      <div class="resource-content-wrapper">
+        <%= link_to resource.title, resource.web_url, class: "resource-title", target: "_blank" %>
+        <p class="resource-description"><%= resource.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="resource-sub-category">
+    Icons
+  </div>
+
+  <% @resources.each do |resource| %>
+    <% if resource.sub_category == "Icons" %>
+      <div class="resource-content-wrapper">
+        <%= link_to resource.title, resource.web_url, class: "resource-title", target: "_blank" %>
+        <p class="resource-description"><%= resource.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<!-- End Design Category -->

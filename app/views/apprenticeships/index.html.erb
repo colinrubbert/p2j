@@ -1,15 +1,15 @@
 <%= render 'apprenticeships/filters' %>
 
-<% @apprentices.each do |apprentice| %>
+<% @apprenticeships.each do |apprenticeship| %>
 <div id="container" class="information-container">
   <div class="logo">
-    <img src="assets/apprentice_logo/<%= apprentice.logo_location %>" alt="Logo for <%= apprentice.name %>">
+    <img src="assets/apprenticeship_logo/<%= apprenticeship.logo_location %>" alt="Logo for <%= apprenticeship.name %>">
   </div>
   <div class="information">
     <div class="header-container clearfix">
       <div class="title-container">
-        <h2><%= link_to apprentice.name, apprentice_path(apprentice) %></h2>
-        <a href="<%= apprentice.web_url %>" target="_blank"><%= apprentice.web_url %></a>
+        <h2><%= link_to apprenticeship.name, apprenticeship_path(apprenticeship) %></h2>
+        <a href="<%= apprenticeship.web_url %>" target="_blank"><%= apprenticeship.web_url %></a>
       </div>
       <div class="review-container">
         <div class="stars">
@@ -23,19 +23,18 @@
       </div>
     </div>
     <p class="description">
-      <%= truncate apprentice.description, length: 700 %>
+      <%= truncate apprenticeship.description, length: 700 %>
       <br />
-      <% if apprentice.description.length > 700 %>
-        <%= link_to "Read More...", apprentice_path(apprentice) %>
+      <% if apprenticeship.description.length > 700 %>
+        <%= link_to "Read More...", apprenticeship_path(apprenticeship) %>
       <% end %>
     </p>
   </div>
   <div class="filter-list">
     <ul class="online-bootcamp">
-      <li><%= apprentice.course_type %></li>
-      <li><%= apprentice.category %></li>
-      <li><%= apprentice.language %></li>
-      <li><%= apprentice.location %></li>
+      <li><%= apprenticeship.category %></li>
+      <li><%= apprenticeship.language %></li>
+      <li><%= apprenticeship.location %></li>
     </ul>
   </div>
 </div>

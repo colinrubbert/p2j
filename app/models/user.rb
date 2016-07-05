@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :educations
   has_many :education_reviews
+  has_many :apprenticeships
+  has_many :resources
 end
